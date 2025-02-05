@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* Default background color */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+
+  #myButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    transition: background-color 0.3s ease; /* Button's own transition */
+  }
+
+  #myButton:focus {
+    outline: none;
+  }
