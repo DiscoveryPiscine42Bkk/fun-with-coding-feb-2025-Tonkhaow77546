@@ -17,7 +17,7 @@ function checkIsCookieExists() {
 }
 
 function loadCookieData() {
-  let cookieData = document.cookie.split("=")[1].split("|");
+  let cookieData = document.cookie.split("=")[1].split(",");
 
   for (let x = 0; x < cookieData.length; x++) {
     if (!cookieData[x]) {
@@ -29,7 +29,7 @@ function loadCookieData() {
 }
 
 function saveCookieData() {
-  var x = toDoLists.join("|");
+  var x = toDoLists;
   document.cookie = `toDoLists=${x};`;
 }
 
