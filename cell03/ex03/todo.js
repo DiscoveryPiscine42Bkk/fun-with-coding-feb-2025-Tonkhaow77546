@@ -1,6 +1,5 @@
 const btnNew = document.getElementById("btn-new");
 btnNew.addEventListener("click", () => {
-  event.preventDefault();
   let newToDo = prompt("What you want to do?");
   if (!newToDo) {
     alert("New ToDo must not empty!");
@@ -41,7 +40,7 @@ function addNewToDo(newToDo) {
   newToDoNode.setAttribute("id", toDoLists.length + 1);
   newToDoNode.innerHTML = newToDo;
   newToDoNode.addEventListener("click", () => {
-    event.preventDefault();
+    
     const elementIdx = event.target.id;
     const element = document.getElementById(elementIdx);
     const isConfirm = confirm("Delete this To-Do Item from list?");
