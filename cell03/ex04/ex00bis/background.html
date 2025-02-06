@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Background Color Changing Button</title>
+  <link rel="stylesheet" href="background.css">
+  
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+  <button id="myButton">Click Me to Change Background Color</button>
+
+  <script>
+    $(document).ready(function() {
+        let $button = $("#myButton");
+        let $body = $("body");
+        let colors = [
+            "#3498db",
+            "#e74c3c",
+            "#2ecc71",
+            "#f39c12",
+            "#9b59b6",
+            "#1abc9c",
+            "#d35400",
+            "#c0392b",
+            "#34495e",
+            "#f1c40f"
+        ];
+        let currentColorIndex = 0;
+
+        $button.on("click", function() {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            $body.css("background-color", colors[currentColorIndex]);
+        });
+    });
+  </script>
+</body>
+</html>
+
