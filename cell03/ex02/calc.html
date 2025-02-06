@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Calculator</title>
+  <title>Calculator</title>
   <style>
     body {
       font-family: sans-serif;
@@ -34,7 +34,6 @@
       padding: 10px 20px;
       border: none;
       border-radius: 3px;
-      cursor: pointer;
       font-size: 16px;
     }
   </style>
@@ -69,7 +68,6 @@
 
       if (!isValidInput(leftOperand, rightOperand)) {
         alert('Error :(');
-        console.log('Error :(');
         return;
       }
 
@@ -81,7 +79,6 @@
 
       const result = calculate(leftOperand, operator, rightOperand);
       alert(result);
-      console.log(result);
     });
 
     function isValidInput(left, right) {
@@ -104,12 +101,7 @@
           return NaN;
       }
     }
-
-    function remindUser() {
-        alert('Please, use me...');
-    }
-
-    setInterval(remindUser, 30000);
+    setInterval(alert('Please, use me...'), 30000);
   </script>
 </body>
 </html>
