@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calculator</title>
+  <title> Calculator</title>
   <style>
     body {
       font-family: sans-serif;
@@ -73,11 +73,13 @@
 
       if ((operator === '/' || operator === '%') && rightOperand === 0) {
         alert("It's over 9000!");
+        console.log("It's over 9000!");
         return;
       }
 
       const result = calculate(leftOperand, operator, rightOperand);
       alert(result);
+      console.log(result);
     });
 
     function isValidInput(left, right) {
