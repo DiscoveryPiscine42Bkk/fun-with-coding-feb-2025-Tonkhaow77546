@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        #ft_list {
+            margin-bottom: 20px;
+        }
+
+        #ft_list p {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #ft_list p:hover {
+            background-color: #d4d8da;
+        }
+        #ft_list p:before {
+            content: '•';
+            color: #3498db;
+            margin-right: 8px;
+        }
+
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #btn-new {
+            width: 100%;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            font-weight: 600; 
+        }
+
+        #btn-new:hover {
+            background-color: #2980b9;
+        }
+        
+		
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>42Bangkok - ToDo List !</h1>
+
+        <div id="ft_list">
+        </div>
+
+        <div class="center">
+            <button id="btn-new">New</button>
+        </div>
+
+    </div>
+</body>
+
+<script src="todo.js"></script>
+
+</html>
