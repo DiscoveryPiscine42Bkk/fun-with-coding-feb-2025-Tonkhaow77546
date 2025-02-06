@@ -31,7 +31,7 @@
         let currentColorIndex = 0;
 
         $button.on("click", function() {
-            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            currentColorIndex = Math.floor(Math.random() * colors.length);
             $body.css("background-color", colors[currentColorIndex]);
         });
     });

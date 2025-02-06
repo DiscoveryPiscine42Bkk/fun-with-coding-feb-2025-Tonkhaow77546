@@ -36,8 +36,11 @@
       border-radius: 3px;
       font-size: 16px;
     }
+    input[type="submit"]:hover {
+      opacity: 0.8;
+    }
   </style>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="calculator">
@@ -56,32 +59,40 @@
 
   <script>
     $(document).ready(function() {
+      let $leftOperandInput = $('#leftOperand');
+      let $operatorSelect = $('#operator');
+      let $rightOperandInput = $('#rightOperand');
+      let $calculateBtn = $('#calculateBtn');
 
-      $('#calculateBtn').on('click', function(event) {
+      $calculateBtn.on('click', function(event) {
         event.preventDefault();
 
-        const leftOperand = parseInt($('#leftOperand').val());
-        const operator = $('#operator').val();
-        const rightOperand = parseInt($('#rightOperand').val());
+        let leftOperand = $leftOperandInput.val();
+        let operator = $operatorSelect.val();
+        let rightOperand = $rightOperandInput.val();
 
         if (!isValidInput(leftOperand, rightOperand)) {
           alert('Error :(');
           return;
         }
 
-        if ((operator === '/' || operator === '%') && rightOperand === 0) {
+        let parseLeftOperand = parseInt(leftOperand);
+        let parseRightOperand = parseInt(rightOperand);
+
+        if ((operator === '/' || operator === '%') && parseRightOperand === 0) {
           alert("It's over 9000!");
           console.log("It's over 9000!");
           return;
         }
 
-        const result = calculate(leftOperand, operator, rightOperand);
+        let result = calculate(parseLeftOperand, operator, parseRightOperand);
         alert(result);
         console.log(result);
       });
 
       function isValidInput(left, right) {
-        return Number.isInteger(left) && left >= 0 && Number.isInteger(right) && right >= 0;
+        let isNonNegativeInteger = /^\d+$/.test(left) && /^\d+$/.test(right);
+        return isNonNegativeInteger;
       }
 
       function calculate(left, operator, right) {
@@ -100,12 +111,12 @@
             return NaN;
         }
       }
-      
-        setInterval(function() {
+    }); setInterval(function() {
           alert('Please, use me...');
         }, 30000);
-    });
-
   </script>
 </body>
 </html>
+
+
+
